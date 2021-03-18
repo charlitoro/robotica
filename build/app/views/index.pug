@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Robot 6-DOF 🤖
+        link(rel="stylesheet", href="styles.css")
+    body(onload="main()")
+        .main 
+            .canvas    
+            .controls
+                .input
+                    .h1#sphereText X: 0 Y: 0 Z: 0
+                .input
+                    label#t0Text(for="t0") Rotar eslabon #1: 0 DEG
+                    input#t0Input(type="range" name="t0" min="0" max="360" value="0" step="1")
+                .input
+                    label#t1Text(for="t1") Mover eslabon #2: 0 DEG
+                    input#t1Input(type="range" name="t1" min="-40" max="240" value="0" step="1")
+                .input
+                    label#t2Text(for="t2") Mover eslabon #3: 0 DEG
+                    input#t2Input(type="range" name="t2" min="-90" max="90" value="0" step="1")
+                .input
+                    label#t3Text(for="t3") Rotar eslabon #3: 0 DEG
+                    input#t3Input(type="range" name="t0" min="0" max="360" value="0" step="1")
+                .input
+                    label#t4Text(for="t4") Mover eslabon #4: 0 DEG
+                    input#t4Input(type="range" name="t0" min="-90" max="90" value="0" step="1")
+                .input
+                    label#t5Text(for="t5") Girar eslabon #4: 0 DEG
+                    input#t5Input(type="range" name="t5" min="0" max="360" value="0" step="1")   
+                .input
+                    label#randomText(for="random")
+                    input#randomInput(type="button" name="random" value="Random!")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js") 
+        script(src="https://unpkg.com/three@0.85.0/examples/js/controls/OrbitControls.js") 
+        script(src="objects.js") 
+        script(src="index.js") 
