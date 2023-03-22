@@ -7,14 +7,14 @@ const robot = (_root, args, _context) => {
     // a la base del robot y el último es afín al efector del robot
     const { distances: { k, l, m, n, }, angles: { t0, t1, t2, t3, t4, t5 } } = args.robot; // Obtener parametros del robot
     const { PI, atan, acos, pow } = Math;
-    const zeroAone = utils_1.MTH(t0, k, 0, 90); // Calcular matrix 4x4 0A1
-    const oneAtwo = utils_1.MTH(t1, 0, l, 0); // Calcular matriz 4x4 1A2
-    const twoAthree = utils_1.MTH(t2 + 90, 0, 0, 90); // Calcular matriz 4x4 2A3
-    const threeAfour = utils_1.MTH(t3 + 180, m, 0, 90); // Calcular matriz 4x4 3A4
-    const fourAFive = utils_1.MTH(t4 + 180, 0, 0, 90); // Calcular matrix 4x4 4A5
-    const fiveASix = utils_1.MTH(t5, n, 0, 0); // Calcular matrix 4x4 5A6
+    const zeroAone = (0, utils_1.MTH)(t0, k, 0, 90); // Calcular matrix 4x4 0A1
+    const oneAtwo = (0, utils_1.MTH)(t1, 0, l, 0); // Calcular matriz 4x4 1A2
+    const twoAthree = (0, utils_1.MTH)(t2 + 90, 0, 0, 90); // Calcular matriz 4x4 2A3
+    const threeAfour = (0, utils_1.MTH)(t3 + 180, m, 0, 90); // Calcular matriz 4x4 3A4
+    const fourAFive = (0, utils_1.MTH)(t4 + 180, 0, 0, 90); // Calcular matrix 4x4 4A5
+    const fiveASix = (0, utils_1.MTH)(t5, n, 0, 0); // Calcular matrix 4x4 5A6
     // MTH 4x4 final sale de multiplicar las MTH individuales de modo que se obtiene 0A4
-    const t = utils_1.T(zeroAone, oneAtwo, twoAthree, threeAfour, fourAFive, fiveASix);
+    const t = (0, utils_1.T)(zeroAone, oneAtwo, twoAthree, threeAfour, fourAFive, fiveASix);
     // Retornar px, py, pz de la MTH 4x4 final, que son las coordenadas del efector final del robot
     // const pmx = t.get(0,3) - n
     const x = t.get(0, 3);
@@ -33,8 +33,8 @@ const robot = (_root, args, _context) => {
             [0, 0, 0, 1]
         ],
         angles: {
-            t0: utils_1.Theta0(x, y).toFixed(4),
-            t1: utils_1.Theta1(x, y, z, k, l, m).toFixed(4),
+            t0: (0, utils_1.Theta0)(x, y).toFixed(4),
+            t1: (0, utils_1.Theta1)(x, y, z, k, l, m).toFixed(4),
             t2: 0,
             t3: 0,
             t4: 0,

@@ -37,7 +37,7 @@ function getRandomInt(min, max) {
 }
 
 function DH(t0, t1, t2, t3, t4, t5) {
-    return fetch('http://localhost:4000/graphql', {
+    return fetch('https://robotica-api.herokuapp.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

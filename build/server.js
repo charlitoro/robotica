@@ -8,11 +8,11 @@ const resolvers_1 = require("./graphql/resolvers");
 const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
 const path_1 = require("path");
-const app = express_1.default()
+const app = (0, express_1.default)()
     .set('port', process.env.PORT || 4000)
-    .set('views', path_1.join(__dirname, 'app', 'views'))
+    .set('views', (0, path_1.join)(__dirname, 'app', 'views'))
     .set('view engine', 'pug')
-    .use(express_1.default.static(path_1.join(__dirname, 'app', 'public')));
+    .use(express_1.default.static((0, path_1.join)(__dirname, 'app', 'public')));
 const port = app.get('port');
 const graphqlServer = new apollo_server_express_1.ApolloServer({
     typeDefs: schema_1.schema,

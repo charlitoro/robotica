@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.schema = void 0;
 const apollo_server_express_1 = require("apollo-server-express");
-const schema = apollo_server_express_1.gql `
+const schema = (0, apollo_server_express_1.gql) `
     type Coordinate {
         x: Float! y: Float! z: Float!
     }
